@@ -1,6 +1,7 @@
 package main.java.com.rudkin.registrationform.controller;
 
 import main.java.com.rudkin.registrationform.view.View;
+
 import java.util.Scanner;
 
 import static main.java.com.rudkin.registrationform.controller.RegexContainer.*;
@@ -12,11 +13,19 @@ public class InputNoteNoteBook {
     private Scanner sc;
 
     private String firstName;
-    private String login;
+    private String loginData;
 
     public InputNoteNoteBook(View view, Scanner sc) {
         this.view = view;
         this.sc = sc;
+    }
+
+    public String getFirstName() {
+        return firstName;
+    }
+
+    public String getLoginData() {
+        return loginData;
     }
 
     public void inputNote() {
@@ -28,9 +37,15 @@ public class InputNoteNoteBook {
         this.firstName =
                 utilityController.inputStringValueWithScanner
                         (FIRST_NAME, str);
-        this.login =
+        this.loginData =
                 utilityController.inputStringValueWithScanner
                         (LOGIN_DATA, REGEX_LOGIN);
+    }
+
+    public void inputLogin() {
+        UtilityController utilityController =
+                new UtilityController(sc, view);
+        this.loginData = utilityController.inputStringValueWithScanner(LOGIN_DATA, REGEX_LOGIN);
     }
 }
 

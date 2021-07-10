@@ -1,7 +1,7 @@
 package main.java.com.rudkin.registrationform.model.entity;
 
 public enum DBNoteBook {
-    NOTE_ONE("Victor","vitya91"),
+    NOTE_ONE("Victor","vityan91"),
     NOTE_TWO("Daryna", "dashka10"),
     NOTE_THREE("Semen","slymak1999");
 
